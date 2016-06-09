@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .container-fluid
+    if messages.error
+      .alert.alert-danger(role='alert')
+        for error in messages.error
+          div= error.msg
+    if messages.success
+      .alert.alert-success(role='alert')
+        for success in messages.success
+          div= success.msg
+    if messages.info
+      .alert.alert-info(role='alert')
+        for info in messages.info
+          div= info.msg
+
+    .row
+      .col-md-2
+
+      .col-md-8
+        h3 Welcome to User Counter
+        p.
+          This program lets you simply count the users that visit your webpage and lets you have a live updating counter on your webpage.
+
+      .col-md-2
